@@ -1,0 +1,14 @@
+<tryton>
+  <data>
+    <record model="ir.ui.view" id="hello_view_tree">
+      <field name="model">hello</field>
+      <field name="name">hello_tree</field>
+      <field name="inherit" ref="hello.hello_view_tree"/>
+    </record>
+    <record model="ir.ui.view" id="hello_view_form">
+      <field name="model">hello</field>
+      <field name="name">hello_form</field>
+      <field name="inherit" ref="hello.hello_view_form"/>
+    </record>
+  </data>
+</tryton>
