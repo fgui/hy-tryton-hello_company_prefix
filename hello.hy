@@ -1,12 +1,10 @@
 (import [trytond.pool [PoolMeta Pool]])
 (import [trytond.model [fields ModelSQL]])
 (import [trytond.modules.company.model [CompanyMultiValueMixin CompanyValueMixin]])
-(def --all-- ["Hello" "HelloCompany"])
 
-(defclass Hello [CompanyMultiValueMixin]
+(defclass Hello [:metaclass PoolMeta CompanyMultiValueMixin]
   "Hello World with prefix from company"
   [--name-- "hello"
-   --metaclass-- PoolMeta
    hello-company (.One2Many fields "hello.company" "hello" "HelloCompanies")
    co-prefix (.MultiValue fields (.Char fields "Company Prefix"))]
 
